@@ -1,4 +1,5 @@
-import React from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "../../configs/router";
 
 const AppLayout = () => {
     return (
@@ -7,7 +8,9 @@ const AppLayout = () => {
             <header className="bg-gray-800 text-white py-4 px-6"></header>
 
             {/* Main Content */}
-            <main className="flex-grow"></main>
+            <main className="flex-grow">
+                <RouterProvider router={router} />
+            </main>
 
             {/* Footer */}
             <footer className="bg-gray-800 text-white py-4 px-6"></footer>
