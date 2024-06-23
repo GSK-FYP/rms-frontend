@@ -1,10 +1,7 @@
-function App() {
+import AppLayout from "./components/templates/AppLayout";
 
-  return (
-    <div>
-      App
-    </div>
-  )
+function App() {
+    return <AppLayout />;
 }
 
-export default App
+export default App;
