@@ -7,7 +7,7 @@ import {
 	IoBriefcaseOutline,
 	IoBusinessOutline,
 	IoCashOutline,
-	IoPersonCircleOutline,
+	IoPersonOutline,
 	IoHeadsetOutline,
 	IoLogOutOutline,
 } from "react-icons/io5";
@@ -172,7 +172,7 @@ const UserSidebar: React.FC<UserSidebarProps> = ({
 										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
 									}`}
 								>
-									<IoHeadsetOutline size="1.3rem" />
+									<IoPersonOutline size="1.3rem" />
 									My Profile
 								</NavLink>
 							</li>

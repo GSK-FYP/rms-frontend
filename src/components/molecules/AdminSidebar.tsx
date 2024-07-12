@@ -7,6 +7,7 @@ import {
 	IoBriefcaseOutline,
 	IoBusinessOutline,
 	IoPeopleOutline,
+	IoPersonOutline,
 	IoCashOutline,
 	IoHeadsetOutline,
 } from "react-icons/io5";
@@ -184,12 +185,12 @@ const AdminSidebar: React.FC<SidebarProps> = ({
 										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
 									}`}
 								>
-									<IoHeadsetOutline size="1.3rem" />
+									<IoPersonOutline size="1.3rem" />
 									My Profile
 								</NavLink>
 							</li>
 
-              <li>
+							<li>
 								<NavLink
 									to="/admin/contact-support"
 									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
