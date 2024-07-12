@@ -1,6 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
+import {
+	IoGridOutline,
+	IoMapOutline,
+	IoBriefcaseOutline,
+	IoBusinessOutline,
+	IoCashOutline,
+	IoPersonCircleOutline,
+	IoHeadsetOutline,
+	IoLogOutOutline,
+} from "react-icons/io5";
+
 interface UserSidebarProps {
 	sidebarOpen: boolean;
 	setSidebarOpen: (arg: boolean) => void;
