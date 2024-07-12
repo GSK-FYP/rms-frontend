@@ -178,6 +178,19 @@ const AdminSidebar: React.FC<SidebarProps> = ({
 						<ul className="flex flex-col gap-1.5">
 							<li>
 								<NavLink
+									to="/admin/profile"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("profile") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoHeadsetOutline size="1.3rem" />
+									My Profile
+								</NavLink>
+							</li>
+
+              <li>
+								<NavLink
 									to="/admin/contact-support"
 									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
 										pathname.includes("contact-support") &&
@@ -193,7 +206,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({
 								<NavLink
 									to="/admin/logout"
 									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
-										pathname.includes("calendar") &&
+										pathname.includes("logout") &&
 										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
 									}`}
 								>
