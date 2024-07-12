@@ -32,6 +32,16 @@ const UserSidebar: React.FC<UserSidebarProps> = ({
 		return () => document.removeEventListener("click", clickHandler);
 	});
 
+	// close if the esc key is pressed
+	useEffect(() => {
+		const keyHandler = ({ keyCode }: KeyboardEvent) => {
+			if (!sidebarOpen || keyCode !== 27) return;
+			setSidebarOpen(false);
+		};
+		document.addEventListener("keydown", keyHandler);
+		return () => document.removeEventListener("keydown", keyHandler);
+	});
+
 	return (
 		<aside
 			className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0`}
