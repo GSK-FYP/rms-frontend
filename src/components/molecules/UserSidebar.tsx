@@ -84,7 +84,73 @@ const UserSidebar: React.FC<UserSidebarProps> = ({
 							MENU
 						</h3>
 
-						<ul className="flex flex-col gap-1.5 mb-6"></ul>
+						<ul className="flex flex-col gap-1.5 mb-6">
+							<li>
+								<NavLink
+									to="/user/overview"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										(pathname === "/user/overview" ||
+											pathname.includes("overview")) &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoGridOutline size="1.3rem" />
+									Overview
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/map"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("map") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoMapOutline size="1.3rem" />
+									Map
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/businesses"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("businesses") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoBriefcaseOutline size="1.3rem" />
+									My Businesses
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/properties"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("properties") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoBusinessOutline size="1.3rem" />
+									My Properties
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/transactions"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("transactions") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoCashOutline size="1.3rem" />
+									Transactions
+								</NavLink>
+							</li>
+						</ul>
 					</div>
 				</nav>
 			</div>
