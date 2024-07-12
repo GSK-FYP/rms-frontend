@@ -31,7 +31,6 @@ function RouterConfig() {
 				path="/auth/login"
 				element={
 					<>
-						{/* <PageTitle title="Login | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
 						<Login />
 					</>
 				}
@@ -40,7 +39,6 @@ function RouterConfig() {
 				path="/auth/register"
 				element={
 					<>
-						{/* <PageTitle title="Register | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
 						<Register />
 					</>
 				}
@@ -49,16 +47,14 @@ function RouterConfig() {
 				path="/auth/forgot-password"
 				element={
 					<>
-						{/* <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
 						<ForgotPassword />
 					</>
 				}
 			/>
 			<Route
-				path="/admin/dashboard"
+				path="/admin/overview"
 				element={
 					<>
-						{/* <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
 						<AdminDashboard />
 					</>
 				}
