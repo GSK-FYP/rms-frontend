@@ -162,6 +162,47 @@ const UserSidebar: React.FC<UserSidebarProps> = ({
 								</NavLink>
 							</li>
 						</ul>
+
+						<ul className="flex flex-col gap-1.5">
+							<li>
+								<NavLink
+									to="/user/profile"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("profile") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoHeadsetOutline size="1.3rem" />
+									My Profile
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/contact-support"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("contact-support") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoHeadsetOutline size="1.3rem" />
+									Contact Support
+								</NavLink>
+							</li>
+
+							<li>
+								<NavLink
+									to="/user/logout"
+									className={`group relative duration-300 ease-in-out flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black dark:text-white hover:bg-gray dark:hover:bg-meta-4 ${
+										pathname.includes("logout") &&
+										"bg-meta-5 hover:bg-meta-5 dark:bg-meta-4"
+									}`}
+								>
+									<IoLogOutOutline size="1.3rem" />
+									Logout
+								</NavLink>
+							</li>
+						</ul>
 					</div>
 				</nav>
 			</div>
