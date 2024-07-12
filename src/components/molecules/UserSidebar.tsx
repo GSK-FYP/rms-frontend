@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 interface UserSidebarProps {
 	sidebarOpen: boolean;
