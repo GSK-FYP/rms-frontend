@@ -90,7 +90,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({
 
 			<div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
 				<nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
-					<div className="flex flex-col justify-between align-between">
+					<div>
 						<h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
 							MENU
 						</h3>
