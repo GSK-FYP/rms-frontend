@@ -76,6 +76,8 @@ const UserSidebar: React.FC<UserSidebarProps> = ({
 					</svg>
 				</button>
 			</div>
+
+			<div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear"></div>
 		</aside>
 	);
 };
