@@ -1,7 +1,14 @@
 import React from "react";
+import AdminDashboardLayout from "../../components/templates/AdminDashboardLayout";
 
 const AdminTransactions: React.FC = () => {
-  return <h1>Admin Transactions Pge</h1>
-}
+	return (
+		<AdminDashboardLayout>
+			<div className="grid grid-cols-1  md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+				<h1>Admin Transactions Page</h1>;
+			</div>
+		</AdminDashboardLayout>
+	);
+};
 
 export default AdminTransactions;
