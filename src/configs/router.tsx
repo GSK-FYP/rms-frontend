@@ -1,10 +1,13 @@
 // import { useEffect } from "react";
 // import { Route, Routes, useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+// import PageTitle from "../components/PageTitle";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
+// import NotFound from "../pages/NotFound";
+
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import AdminMapView from "../pages/admin/AdminMapView";
 import AdminAllBusinesses from "../pages/admin/AdminAllBusinesses";
@@ -12,8 +15,13 @@ import AdminAllProperties from "../pages/admin/AdminAllProperties";
 import AdminAllUsers from "../pages/admin/AdminAllUsers";
 import AdminTransactions from "../pages/admin/AdminTransactions";
 import AdminProfile from "../pages/admin/AdminProfile";
-// import NotFound from "../pages/NotFound";
-// import PageTitle from "../components/PageTitle";
+
+import UserDashboard from "../pages/user/UserDashboard";
+import UserMapView from "../pages/user/UserMapView";
+import UserAllBusinesses from "../pages/user/UserAllBusinesses";
+import UserAllProperties from "../pages/user/UserAllProperties";
+import UserTransactions from "../pages/user/UserTransactions";
+import UserProfile from "../pages/user/UserProfile";
 
 function RouterConfig() {
 	// const { pathname } = useLocation();
@@ -39,6 +47,16 @@ function RouterConfig() {
 				<Route path="users" element={<AdminAllUsers />} />
 				<Route path="transactions" element={<AdminTransactions />} />
 				<Route path="profile" element={<AdminProfile />} />
+				{/* <Route path="contact-support" element={} /> */}
+			</Route>
+
+			<Route path="/user/*">
+				<Route path="overview" element={<UserDashboard />} />
+				<Route path="map" element={<UserMapView />} />
+				<Route path="businesses" element={<UserAllBusinesses />} />
+				<Route path="properties" element={<UserAllProperties />} />
+				<Route path="transactions" element={<UserTransactions />} />
+				<Route path="profile" element={<UserProfile />} />
 				{/* <Route path="contact-support" element={} /> */}
 			</Route>
 		</Routes>
