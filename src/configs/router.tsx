@@ -6,7 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import AdminDashboard from "../pages/admin/AdminDashboard";
-import AdminMap from "../pages/admin/AdminMap";
+import AdminMapView from "../pages/admin/AdminMapView";
 import AdminAllBusinesses from "../pages/admin/AdminAllBusinesses";
 import AdminAllProperties from "../pages/admin/AdminAllProperties";
 import AdminAllUsers from "../pages/admin/AdminAllUsers";
@@ -33,7 +33,7 @@ function RouterConfig() {
 
 			<Route path="/admin/*">
 				<Route path="overview" element={<AdminDashboard />} />
-				<Route path="map" element={<AdminMap />} />
+				<Route path="map" element={<AdminMapView />} />
 				<Route path="businesses" element={<AdminAllBusinesses />} />
 				<Route path="properties" element={<AdminAllProperties />} />
 				<Route path="users" element={<AdminAllUsers />} />
