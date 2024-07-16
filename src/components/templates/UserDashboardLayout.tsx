@@ -1,8 +1,10 @@
 import React, { useState, ReactNode } from "react";
-import Header from "../Header/index";
 import UserSidebar from "../molecules/UserSidebar";
+import Header from "../organisms/dashboard/Header";
 
-const UserDashboardLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+const UserDashboardLayout: React.FC<{ children: ReactNode }> = ({
+	children,
+}) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	return (
