@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Loader from "./common/Loader";
+import Loader from "./components/molecules/Loader";
 import RouterConfig from "./configs/router";
 // import MainLayout from "./components/templates/DashboardLayout";
 
@@ -15,7 +15,7 @@ function App() {
 		<Loader />
 	) : (
 		// <MainLayout>
-			<RouterConfig />
+		<RouterConfig />
 		// </MainLayout>
 	);
 }
