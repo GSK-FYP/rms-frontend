@@ -10,11 +10,11 @@ const LogoIcon: React.FC = () => {
 				xmlns="http://www.w3.org/2000/svg"
 				fill="#000000"
 			>
-				<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+				<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 				<g
 					id="SVGRepo_tracerCarrier"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				></g>
 				<g id="SVGRepo_iconCarrier">
 					<circle
@@ -29,10 +29,10 @@ const LogoIcon: React.FC = () => {
 					></path>
 				</g>
 			</svg>
-			<p className="text-[#0F172A]">
+			<span className="text-[#0F172A]">
 				Tax
-				<span className="text-primary">Flow</span>
-			</p>
+				<span className="text-[#2563EB]">Flow</span>
+			</span>
 		</div>
 	);
 };

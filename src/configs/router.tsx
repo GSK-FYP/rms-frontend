@@ -2,10 +2,10 @@
 // import { Route, Routes, useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 // import PageTitle from "../components/PageTitle";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import ForgotPassword from "../pages/ForgotPassword";
+import Home from "../pages/landing/Home";
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
+import ForgotPassword from "../pages/auth/ForgotPassword";
 // import NotFound from "../pages/NotFound";
 
 import AdminDashboard from "../pages/admin/AdminDashboard";

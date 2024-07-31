@@ -4,6 +4,7 @@ import DropdownMessage from "../../Header/DropdownMessage";
 import DropdownNotification from "../../Header/DropdownNotification";
 import DropdownUser from "../../Header/DropdownUser";
 import DarkModeSwitcher from "../../molecules/DarkModeSwitcher";
+import LogoIcon from "../../atoms/LogoIcon";
 
 interface HeaderProps {
 	sidebarOpen: string | boolean | undefined;
@@ -58,8 +59,8 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
 					</button>
 					{/* <!-- Hamburger Toggle BTN --> */}
 
-					<Link className="block flex-shrink-0 lg:hidden" to="/">
-						<h1>RTMS</h1>
+					<Link className="md:block flex-shrink-0 hidden lg:hidden" to="/">
+						<LogoIcon />
 					</Link>
 				</div>
 

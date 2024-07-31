@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import Github from "../../../icons/Github";
-import LogoIcon from "../../../icons/LogoIcon";
+import LogoIcon from "../../atoms/LogoIcon";
 import Twitter from "../../../icons/Twitter";
 
 const Footer: React.FC = () => {
@@ -14,13 +14,13 @@ const Footer: React.FC = () => {
 		},
 		{
 			id: 2,
-			text: " Testimonials",
-			sectionId: "TestimonialsSection",
+			text: " About",
+			sectionId: "AboutSection",
 		},
 		{
 			id: 3,
-			text: "Pricing",
-			sectionId: "PlansSection",
+			text: "Contact",
+			sectionId: "ContactSection",
 		},
 	];
 
@@ -37,7 +37,6 @@ const Footer: React.FC = () => {
 								key={id}
 								to={sectionId}
 								spy={true}
-								// exact="true"
 								activeClass="active"
 								smooth
 								className="cursor-pointer rounded-lg px-2 py-1 duration-300 hover:bg-slate-100 hover:text-slate-900"
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
 							<Twitter />
 						</Link>
 						<Link
-							to="https://github.com/GSK_FYP/"
+							to=""
 							className="fill-slate-500 duration-300 hover:fill-slate-700"
 							target="_blank"
 						>
@@ -64,7 +63,9 @@ const Footer: React.FC = () => {
 						</Link>
 					</div>
 					<div className="mt-6 flex justify-center text-slate-500 sm:mt-0 sm:text-sm">
-						<p>Copyright © 2024 RTMS. All rights reserved.</p>
+						<p>
+							Copyright © 2024 <LogoIcon />. All rights reserved.
+						</p>
 					</div>
 				</div>
 			</div>
