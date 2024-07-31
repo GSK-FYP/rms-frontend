@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import LogoIcon from "../../components/atoms/LogoIcon";
 import { useAuth } from "../../contexts/AuthContext";
@@ -11,7 +11,6 @@ const Login: React.FC = () => {
   });
   const [error, setError] = useState<string | null>(null);
   const { login } = useAuth();
-  const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -22,7 +21,6 @@ const Login: React.FC = () => {
     setError(null);
     try {
       await login(form.username, form.password);
-      // If login is successful, the AuthContext will handle navigation
     } catch (err) {
       setError("Login failed. Please check your credentials and try again.");
     }
