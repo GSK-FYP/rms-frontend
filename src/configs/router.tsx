@@ -1,6 +1,7 @@
 // import { useEffect } from "react";
 // import { Route, Routes, useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./utils/ProtectedRoute";
 // import PageTitle from "../components/PageTitle";
 import Home from "../pages/landing/Home";
 import Login from "../pages/auth/Login";
@@ -38,16 +39,18 @@ function RouterConfig() {
 			<Route path="/auth/forgot-password" element={<ForgotPassword />} />
 			{/* <Route path='auth/reset-password/:token' element={<ResetPassword />} />
 			<Route exact path='auth/verify/:token' element={<VerifyEmail />} /> */}
-
-			<Route path="/admin/*">
-				<Route path="overview" element={<AdminDashboard />} />
-				<Route path="map" element={<AdminMapView />} />
-				<Route path="businesses" element={<AdminAllBusinesses />} />
-				<Route path="properties" element={<AdminAllProperties />} />
-				<Route path="users" element={<AdminAllUsers />} />
-				<Route path="transactions" element={<AdminTransactions />} />
-				<Route path="profile" element={<AdminProfile />} />
-				{/* <Route path="contact-support" element={} /> */}
+			 
+			<Route element={<ProtectedRoute />}>
+				<Route path="/admin/*">
+					<Route path="overview" element={<AdminDashboard />} />
+					<Route path="map" element={<AdminMapView />} />
+					<Route path="businesses" element={<AdminAllBusinesses />} />
+					<Route path="properties" element={<AdminAllProperties />} />
+					<Route path="users" element={<AdminAllUsers />} />
+					<Route path="transactions" element={<AdminTransactions />} />
+					<Route path="profile" element={<AdminProfile />} />
+					{/* <Route path="contact-support" element={} /> */}
+				</Route>
 			</Route>
 
 			<Route path="/user/*">
