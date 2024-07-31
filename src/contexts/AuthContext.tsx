@@ -1,5 +1,5 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
   admin: Admin | null;
@@ -24,8 +24,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    const storedAdmin = localStorage.getItem("admin");
+    const storedToken = localStorage.getItem('token');
+    const storedAdmin = localStorage.getItem('admin');
     if (storedToken && storedAdmin) {
       setToken(storedToken);
       setAdmin(JSON.parse(storedAdmin));
@@ -34,27 +34,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (username: string, password: string) => {
     try {
-      const response = await fetch("http://0.0.0.0:9002/super-admins/authenticate", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ username, password }),
+      const response = await fetch('http://0.0.0.0:9002/super-admins/authenticate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ username, password })
       });
 
       if (!response.ok) {
-        throw new Error("Login failed");
+        throw new Error('Login failed');
       }
 
       const data = await response.json();
       setToken(data.access_token);
-      localStorage.setItem("token", data.access_token);
+      localStorage.setItem('token', data.access_token);
 
       // Fetch admin details
-      const adminResponse = await fetch("http://0.0.0.0:9002/super-admins/current", {
-        headers: { Authorization: `Bearer ${data.access_token}` },
+      const adminResponse = await fetch('http://0.0.0.0:9002/super-admins/current', {
+        headers: { Authorization: `Bearer ${data.access_token}` }
       });
 
       if (!adminResponse.ok) {
-        throw new Error("Failed to fetch admin details");
+        throw new Error('Failed to fetch admin details');
       }
 
       const adminData = await adminResponse.json();
@@ -62,15 +62,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         id: adminData.id,
         name: adminData.name,
         email: adminData.email,
-        username: adminData.username,
+        username: adminData.username
       };
 
       setAdmin(admin);
-      localStorage.setItem("admin", JSON.stringify(admin));
+      localStorage.setItem('admin', JSON.stringify(admin));
 
-      navigate("/admin/overview");
+      navigate('/admin/overview');
     } catch (error) {
-      console.error("Login error:", error);
+      console.error('Login error:', error);
       throw error;
     }
   };
@@ -78,9 +78,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setAdmin(null);
     setToken(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("admin");
-    navigate("/auth/login");
+    localStorage.removeItem('token');
+    localStorage.removeItem('admin');
+    navigate('/auth/login');
   };
 
   const value = {
@@ -88,7 +88,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     token,
     login,
     logout,
-    isAuthenticated: !!admin,
+    isAuthenticated: !!admin
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
@@ -97,7 +97,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
 };
