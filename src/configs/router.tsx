@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import { Route, Routes, useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import ProtectedRoute from "./utils/ProtectedRoute";
+import ProtectedRoute from "../utils/ProtectedRoute";
 // import PageTitle from "../components/PageTitle";
 import Home from "../pages/landing/Home";
 import Login from "../pages/auth/Login";
