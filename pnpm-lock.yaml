@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@tanstack/react-table':
+        specifier: ^8.19.3
+        version: 8.19.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       apexcharts:
         specifier: ^3.41.0
         version: 3.50.0
@@ -41,6 +44,9 @@ importers:
       react-apexcharts:
         specifier: ^1.4.1
         version: 1.4.1(apexcharts@3.50.0)(react@18.3.1)
+      react-csv:
+        specifier: ^2.2.2
+        version: 2.2.2
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
@@ -72,6 +78,9 @@ importers:
       '@types/react':
         specifier: ^18.2.17
         version: 18.3.3
+      '@types/react-csv':
+        specifier: ^1.1.10
+        version: 1.1.10
       '@types/react-dom':
         specifier: ^18.2.7
         version: 18.3.0
@@ -451,6 +460,17 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
+  '@tanstack/react-table@8.19.3':
+    resolution: {integrity: sha512-MtgPZc4y+cCRtU16y1vh1myuyZ2OdkWgMEBzyjYsoMWMicKZGZvcDnub3Zwb6XF2pj9iRMvm1SO1n57lS0vXLw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
+  '@tanstack/table-core@8.19.3':
+    resolution: {integrity: sha512-IqREj9ADoml9zCAouIG/5kCGoyIxPFdqdyoxis9FisXFi5vT+iYfEfLosq4xkU/iDbMcEuAj+X8dWRLvKYDNoQ==}
+    engines: {node: '>=12'}
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -468,6 +488,9 @@ packages:
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+
+  '@types/react-csv@1.1.10':
+    resolution: {integrity: sha512-PESAyASL7Nfi/IyBR3ufd8qZkyoS+7jOylKmJxRZUZLFASLo4NZaRsJ8rNP8pCcbIziADyWBbLPD1nPddhsL4g==}
 
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
@@ -1399,6 +1422,9 @@ packages:
       apexcharts: ^3.41.0
       react: '>=0.13'
 
+  react-csv@2.2.2:
+    resolution: {integrity: sha512-RG5hOcZKZFigIGE8LxIEV/OgS1vigFQT4EkaHeKgyuCbUAu9Nbd/1RYq++bJcJJ9VOqO/n9TZRADsXNDR4VEpw==}
+
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -2037,6 +2063,14 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.4
 
+  '@tanstack/react-table@8.19.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/table-core': 8.19.3
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@tanstack/table-core@8.19.3': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.24.8
@@ -2061,6 +2095,10 @@ snapshots:
   '@types/md5@2.3.5': {}
 
   '@types/prop-types@15.7.12': {}
+
+  '@types/react-csv@1.1.10':
+    dependencies:
+      '@types/react': 18.3.3
 
   '@types/react-dom@18.3.0':
     dependencies:
@@ -2948,6 +2986,8 @@ snapshots:
       apexcharts: 3.50.0
       prop-types: 15.8.1
       react: 18.3.1
+
+  react-csv@2.2.2: {}
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:

@@ -29,7 +29,7 @@ const LogoIcon: React.FC = () => {
 					></path>
 				</g>
 			</svg>
-			<span className="text-[#0F172A]">
+			<span className="text-[#0F172A] dark:text-white">
 				Tax
 				<span className="text-[#2563EB]">Flow</span>
 			</span>

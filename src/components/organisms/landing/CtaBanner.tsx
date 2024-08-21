@@ -6,7 +6,7 @@ const CtaBanner = () => {
 	return (
 		<Container
 			title="Get started today"
-			text="It’s time to take control of your books. Buy our software so you can feel like you’re doing something productive."
+			text="It's time to modernize Ghana's revenue management. Implement our software to enhance transparency, increase efficiency, and drive national development."
 			titleTextWhite={true}
 			textColor="text-white"
 			bgBlue={true}
@@ -20,10 +20,10 @@ const CtaBanner = () => {
 		>
 			<div className="mt-10 flex justify-center">
 				<Link
-					to=""
+					to="#ContactSection"
 					className="rounded-full bg-white px-4 py-2.5 text-sm font-semibold hover:bg-blue-50"
 				>
-					Get 6 months free
+					Contact Us
 				</Link>
 			</div>
 		</Container>

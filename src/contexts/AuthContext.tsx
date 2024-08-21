@@ -1,19 +1,20 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface AuthContextType {
-  admin: Admin | null;
-  token: string | null;
-  login: (username: string, password: string) => Promise<void>;
-  logout: () => void;
-  isAuthenticated: boolean;
-}
-
 interface Admin {
   id: string;
   name: string;
   email: string;
   username: string;
+}
+
+interface AuthContextType {
+  admin: Admin | null;
+  token: string | null;
+  login: (username: string, password: string) => Promise<void>;
+  logout: () => void;
+  updateAdmin: (updatedAdmin: Partial<Admin>) => void;
+  isAuthenticated: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -30,7 +31,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setToken(storedToken);
       setAdmin(JSON.parse(storedAdmin));
     }
-  }, []);
+  }, []);   
 
   const login = async (username: string, password: string) => {
     try {
@@ -58,15 +59,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       const adminData = await adminResponse.json();
-      const admin: Admin = {
-        id: adminData.id,
-        name: adminData.name,
-        email: adminData.email,
-        username: adminData.username
-      };
-
-      setAdmin(admin);
-      localStorage.setItem('admin', JSON.stringify(admin));
+      setAdmin(adminData);
+      localStorage.setItem('admin', JSON.stringify(adminData));
 
       navigate('/admin/overview');
     } catch (error) {
@@ -83,13 +77,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     navigate('/auth/login');
   };
 
+  const updateAdmin = (updatedAdmin: Partial<Admin>) => {
+    setAdmin(prevAdmin => {
+      if (!prevAdmin) return null;
+      const newAdmin = { ...prevAdmin, ...updatedAdmin };
+      localStorage.setItem('admin', JSON.stringify(newAdmin));
+      return newAdmin;
+    });
+  };
+
   const value = {
     admin,
     token,
     login,
     logout,
-    isAuthenticated: !!admin
+    updateAdmin,
+    isAuthenticated: !!admin,
   };
+
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

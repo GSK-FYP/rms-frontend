@@ -6,17 +6,18 @@ const FeaturesSection = () => {
 	const [imgSrc, setImgsrc] = useState("");
 
 	const buttonInfo = [
-		{
+        {
 			id: 1,
-			button: "GIS Integration",
-			text: "Leverage geographical data for precise revenue tracking and allocation",
-			src: "https://salient.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=2048&q=75",
-		},
-		{
-			id: 2,
-			button: "Unified Dashboard",
+			button: "Unified Revenue Collection",
 			text: "Coordinate revenue collection across all government levels",
 			src: "https://salient.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=2048&q=75",
+		},
+        
+		{
+			id: 2,
+			button: "Multi-level Government Integration",
+			text: "Leverage geographical information system to make use of spatial data for precise revenue tracking and allocation",
+			src: "https://salient.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=2048&q=75",
 		},
 		{
 			id: 3,
@@ -27,7 +28,7 @@ const FeaturesSection = () => {
 		{
 			id: 4,
 			button: "Automated Notifications",
-			text: "Improve compliance with timely reminders",
+			text: "Improve compliance with timely reminders and notifications",
 			src: "https://salient.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=2048&q=75",
 		},
 	];
@@ -42,8 +43,8 @@ const FeaturesSection = () => {
 
 	return (
 		<Container
-			title="Everything you need to manage national revenue."
-			text="TaxFlow is a comprehensive revenue management platform that helps governments collect, track, and allocate revenue efficiently."
+			title="Everything you need to manage Ghana's revenue effectively"
+			text="TaxFlow is a comprehensive revenue management platform that helps Ghanaian government entities collect, track, and allocate revenue efficiently at both local and national levels."
 			titleTextWhite={true}
 			textColor="text-blue-100"
 			headerCenter="md:text-center mx-auto max-w-[640px] xl:max-w-none"

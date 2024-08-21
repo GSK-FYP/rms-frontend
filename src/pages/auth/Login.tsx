@@ -30,16 +30,16 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex w-full h-screen">
-      <div className="w-full flex items-center justify-center lg:w-1/2">
-        <div
-          className="flex min-h-screen flex-col dark:bg-gray-900 w-full"
-          style={{
-            backgroundImage:
-              "url('https://salient.tailwindui.com/_next/static/media/background-features.5f7a9ac9.jpg')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <div className="w-full flex items-center justify-center lg:w-1/2">
+            <div
+            className="flex min-h-screen flex-col dark:bg-gray-900 w-full"
+            style={{
+                backgroundImage:
+                "url('https://salient.tailwindui.com/_next/static/media/background-features.5f7a9ac9.jpg')",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+            }}
+            >
           <header className="absolute inset-x-0 top-0 z-50">
             <nav
               aria-label="Global"
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
               <div className="flex lg:flex-1">
                 <a
                   href="/"
-                  className="-m-1.5 bg-white border-white round-20 p-2 w-fit-content"
+                  className="-m-1.5 bg-white border-white rounded-2xl p-5 w-fit-content"
                 >
                   <LogoIcon />
                 </a>
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex h-full w-screen items-center justify-center">
+      <div className="flex h-full w-screen items-center">
         <div className="flex min-h-full flex-1 flex-col justify-center px-4 py-8 lg:px-6">
           <div className="sm:mx-auto sm:w-full sm:max-w-xs">
             <h2 className="mt-6 text-center text-xl font-bold leading-8 tracking-tight text-gray-900">

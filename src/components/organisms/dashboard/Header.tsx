@@ -5,13 +5,17 @@ import DropdownNotification from "../../Header/DropdownNotification";
 import DropdownUser from "../../Header/DropdownUser";
 import DarkModeSwitcher from "../../molecules/DarkModeSwitcher";
 import LogoIcon from "../../atoms/LogoIcon";
+import { useAuth } from "../../../contexts/AuthContext";
+import InitialAvatar from "../../molecules/InitialAvatar";
 
 interface HeaderProps {
-	sidebarOpen: string | boolean | undefined;
-	setSidebarOpen: (arg0: boolean) => void;
+  sidebarOpen: string | boolean | undefined;
+  setSidebarOpen: (arg0: boolean) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
+  const { admin } = useAuth();
+
 	return (
 		<header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
 			<div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
@@ -34,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
 								></span>
 								<span
 									className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
+
 										!sidebarOpen && "delay-400 !w-full"
 									}`}
 								></span>
@@ -116,7 +121,19 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
 					</ul>
 
 					{/* <!-- User Area --> */}
-					<DropdownUser />
+                    <DropdownUser
+                        avatar={
+                        admin?.profilePicture ? (
+                            <img
+                            src={admin.profilePicture}
+                            alt="User"
+                            className="rounded-full h-12 w-12"
+                            />
+                        ) : (
+                            <InitialAvatar name={admin?.name || 'Admin'} size={48} fontSize={20} />
+                        )
+                        }
+                    />
 					{/* <!-- User Area --> */}
 				</div>
 			</div>

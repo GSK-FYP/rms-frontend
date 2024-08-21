@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useAuth } from "../../contexts/AuthContext";
+import LogoIcon from "../../components/atoms/LogoIcon";
 
 interface StateProps {
   name: string;
@@ -77,8 +78,11 @@ const Register: React.FC = () => {
 
 
   return (
-    <div className="flex h-full w-screen items-center justify-center">
+    <div className="flex h-screen w-screen items-center justify-center">
       <div className="flex min-h-full flex-1 flex-col justify-center px-4 py-8 lg:px-6">
+        <Link to="/" className="p-5 mx-auto">
+            <LogoIcon/>
+        </Link>
         <div className="sm:mx-auto sm:w-full sm:max-w-xs">
           <h2 className="mt-6 text-center text-xl font-bold leading-8 tracking-tight text-gray-900">
             Create a new admin account
